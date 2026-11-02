@@ -1,0 +1,90 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #243044;
+  background: #f3f6fa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.game {
+  width: min(100%, 480px);
+  text-align: center;
+}
+
+h1 { margin: 0 0 14px; font-size: clamp(1.75rem, 5vw, 2.2rem); }
+
+.instructions {
+  max-width: 390px;
+  margin: 0 auto 24px;
+  line-height: 1.5;
+}
+
+.board {
+  width: min(100%, 360px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 5px;
+  background: #334766;
+  border-radius: 8px;
+  box-shadow: 0 8px 22px rgb(36 48 68 / 15%);
+}
+
+.tile, .empty {
+  min-width: 0;
+  min-height: 0;
+  border-radius: 4px;
+}
+
+.tile {
+  border: 0;
+  padding: 0;
+  background-image: url("../images/puzzle.png");
+  background-size: 400% 400%;
+  cursor: pointer;
+  transition: filter 120ms ease;
+}
+
+.tile:hover { filter: brightness(1.12); }
+.tile:focus-visible { outline: 3px solid #ffb640; outline-offset: -4px; }
+.empty { background: #e7edf5; }
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.game-button {
+  border: 0;
+  border-radius: 5px;
+  padding: 11px 18px;
+  background: #275d9a;
+  color: white;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.game-button:hover { background: #194a80; }
+.game-button:focus-visible { outline: 3px solid #ffb640; outline-offset: 3px; }
+.game-stats { margin: 18px 0 0; font-weight: bold; }
+.stat-divider { margin: 0 12px; color: #7a899c; }
+.message { min-height: 1.5em; margin: 18px 0 0; color: #176343; font-weight: bold; }
+
+@media (max-width: 380px) {
+  .game-button { padding: 10px 12px; }
+}

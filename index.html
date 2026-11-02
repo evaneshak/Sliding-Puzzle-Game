@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sliding Puzzle Game</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <h1>Sliding Puzzle Game</h1>
+    <p class="instructions">Click a tile next to the empty square to slide it into place. Put the numbers in order from 1 to 15.</p>
+
+    <div class="board" id="board" aria-label="4 by 4 sliding puzzle"></div>
+
+    <div class="controls">
+      <button class="game-button" id="new-game-button" type="button">New Game</button>
+      <button class="game-button" id="simple-game-button" type="button">Simple Game</button>
+    </div>
+    <p class="game-stats">Moves: <span id="move-count">0</span> <span class="stat-divider" aria-hidden="true">|</span> Time: <span id="time-count">0</span> seconds</p>
+    <p class="message" id="message" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>
